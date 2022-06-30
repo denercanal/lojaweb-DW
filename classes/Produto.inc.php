@@ -1,126 +1,110 @@
 <?php
-
 class Produto
 {
-	public $idProduto;
-	public $nomeProduto;
-	public $dataFabricacao;
-	public $preco;
-	public $estoque;
-	public $descricao;
-	public $referencia;
-	public $codFabricante;
+	private $produto_id;
+	private $nome;
+	private $data_fabricacao;
+	private $preco;
+	private $estoque;
+	private $descricao;
+	private $referencia;
+	private $cod_fabricante;
 
-
-	function Produto()
-	{
+	function setAll(
+		$novo_nome,
+		$novo_data_fabricacao,
+		$novo_preco,
+		$novo_estoque,
+		$novo_descricao,
+		$novo_referencia,
+		$novo_cod_fabricante
+	) {
+		($this)->nome = $novo_nome;
+		($this)->data_fabricacao = strtotime(str_replace('/', '-', $novo_data_fabricacao));
+		($this)->preco = $novo_preco;
+		($this)->estoque = $novo_estoque;
+		($this)->descricao = $novo_descricao;
+		($this)->referencia = $novo_referencia;
+		($this)->cod_fabricante = $novo_cod_fabricante;
 	}
 
-	function recebeProduto($idProduto, $nomeProduto, $dataFabricacao, $preco, $estoque, $descricao, $referencia, $codFabricante)
+	function get_produto_id()
 	{
-		$this->idProduto = ($idProduto);
-		$this->nomeProduto = ($nomeProduto);
-		$this->dataFabricacao = strtotime(str_replace("-", "/", $dataFabricacao));
-		$this->referencia = ($referencia);
-		$this->codFabricante = ($codFabricante);
-		$this->preco = ($preco);
-		$this->descricao = ($descricao);
-		$this->estoque = ($estoque);
+		return ($this)->produto_id;
 	}
 
-	function recebeData($dtFabricacao)
+	function set_produto_id($novo_produto_id)
 	{
-		return $this->dataFabricacao = strtotime($dtFabricacao);
+		($this)->produto_id = $novo_produto_id;
 	}
 
-	public function getIdProduto()
+	function get_nome()
 	{
-		return $this->idProduto;
+		return ($this)->nome;
 	}
 
-	public function setIdProduto($idProduto)
+	function set_nome($novo_nome)
 	{
-		$this->idProduto = $idProduto;
-		return $this;
+		($this)->nome = $novo_nome;
 	}
 
-	public function getNomeProduto()
+	function get_data_fabricacao()
 	{
-		return $this->nomeProduto;
+		return ($this)->data_fabricacao;
 	}
 
-	public function setNomeProduto($nomeProduto)
+	function set_data_fabricacao($novo_data_fabricacao)
 	{
-		$this->nomeProduto = $nomeProduto;
-		return $this;
+		($this)->data_fabricacao = strtotime($novo_data_fabricacao);
 	}
 
-	public function getDataFabricacao()
+	function get_preco()
 	{
-		return $this->dataFabricacao;
+		return ($this)->preco;
 	}
 
-	public function setDataFabricacao($dataFabricacao)
+	function set_preco($novo_preco)
 	{
-		$this->dataFabricacao = $dataFabricacao;
-		return $this;
+		($this)->preco = $novo_preco;
 	}
 
-	public function getPreco()
+	function get_estoque()
 	{
-		return $this->preco;
+		return ($this)->estoque;
 	}
 
-	public function setPreco($preco)
+	function set_estoque($novo_estoque)
 	{
-		$this->preco = $preco;
-		return $this;
+		($this)->estoque = $novo_estoque;
 	}
 
-	public function getEstoque()
+	function get_descricao()
 	{
-		return $this->estoque;
+		return ($this)->descricao;
 	}
 
-
-	public function setEstoque($estoque)
+	function set_descricao($novo_descricao)
 	{
-		$this->estoque = $estoque;
-		return $this;
+		($this)->descricao = $novo_descricao;
 	}
 
-	public function getDescricao()
+	function get_referencia()
 	{
-		return $this->descricao;
+		return ($this)->referencia;
 	}
 
-	public function setDescricao($descricao)
+	function set_referencia($novo_referencia)
 	{
-		$this->descricao = $descricao;
-		return $this;
+		($this)->referencia = $novo_referencia;
 	}
 
-
-	public function getCodFabricante()
+	function get_cod_fabricante()
 	{
-		return $this->codFabricante;
+		return ($this)->cod_fabricante;
 	}
 
-	public function setCodFabricante($codFabricante)
+	function set_cod_fabricante($novo_cod_fabricante)
 	{
-		$this->codFabricante = $codFabricante;
-		return $this;
-	}
-
-	public function getReferencia()
-	{
-		return $this->referencia;
-	}
-
-
-	public function setReferencia($referencia)
-	{
-		$this->referencia = $referencia;
-		return $this;
+		($this)->cod_fabricante = $novo_cod_fabricante;
 	}
 }
